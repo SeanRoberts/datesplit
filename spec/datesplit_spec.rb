@@ -37,4 +37,10 @@ describe Datesplit do
     d.start_date.to_s.should == Date.parse('Apr 27 2012').to_s
     d.end_date.to_s.should == Date.parse('April 29, 2012').to_s
   end
+  
+  it "should return dates for 'April 9, 2012 to January 1st 2013'" do
+    d = Datesplit.new('April 9, 2012 to January 1st 2013')
+    d.start_date.to_s.should == Date.parse('April 9 2012').to_s
+    d.end_date.to_s.should == Date.parse('January 1 2013').to_s
+  end
 end

@@ -1,9 +1,7 @@
 require 'rubygems'
 require 'rake'
-require 'echoe'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new('spec')
-
 
 Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
 
