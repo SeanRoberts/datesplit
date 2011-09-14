@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
  s.name        = "datesplit"
- s.version     = '0.0.1'
+ s.version     = '0.0.2'
  s.authors     = ["Sean Roberts"]
  s.email       = ["roberts.sean@gmail.com"]
 
