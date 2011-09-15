@@ -43,4 +43,20 @@ describe Datesplit do
     d.start_date.to_s.should == Date.parse('April 9 2012').to_s
     d.end_date.to_s.should == Date.parse('January 1 2013').to_s
   end
+  
+  it "returns the correct number of days" do
+    d = Datesplit.new('April 9 to 13')
+    d.number_of_days.should == 5
+  end
+  
+  it "responds properly to each" do
+    d = Datesplit.new('April 9 to 13')
+    total = 0
+    d.each_with_index do |date, i|
+      date.should be_a(Date)
+      total = i
+    end
+    total.should == 4
+  end
+  
 end

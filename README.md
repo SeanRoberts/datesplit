@@ -10,10 +10,12 @@ Usage
 Datesplit has only 3 public methods: start_date, end_date, and duration.  Each does pretty much what you would expect.
 
     dates = Datesplit.new('April 9th to April 20th, 2012')
-    dates.start_date.to_s    # Returns #<Date: 4912053/2,0,2299161>
-    dates.end_date.to_s      # Returns #<Date: 4912075/2,0,2299161>
-    dates.duration           # Returns 11
+    dates.range                    # Returns a range of Date objects from April 9th..April 20th
+    dates.start_date               # Returns #<Date: 4912053/2,0,2299161>
+    dates.end_date                 # Returns #<Date: 4912075/2,0,2299161>
+    dates.number_of_days           # Returns 11
 
+    dates.each { |d| puts d }      # Steps through each date in the range between April 9th and 20th (inclusive)
 
 Formats
 -----
