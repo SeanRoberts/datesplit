@@ -1,13 +1,9 @@
 require 'rubygems'
 require 'rake'
 require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new('spec')
 
 Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
 
-Rake::TestTask.new do |t|
- t.libs << 'test'
-end
-
-desc "Run tests"
+RSpec::Core::RakeTask.new
+desc "Run specs"
 task :default => :spec
