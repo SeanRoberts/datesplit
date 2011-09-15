@@ -59,4 +59,10 @@ describe Datesplit do
     total.should == 4
   end
   
+  it "raises a ParseError given an unknown format" do
+    d = Datesplit.new('garbage data')
+    expect { d.start_date }.to raise_error(Datesplit::ParseError)
+    expect { d.end_date }.to raise_error(Datesplit::ParseError)
+  end
+  
 end

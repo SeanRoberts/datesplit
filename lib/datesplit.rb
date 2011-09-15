@@ -1,6 +1,8 @@
 require 'date'
 class Datesplit
   include Enumerable
+  ParseError = Class.new(StandardError)
+  
   def initialize(date_string)
     @date_string = String.new(date_string)
   end
@@ -23,7 +25,7 @@ class Datesplit
         break
       end
     end
-    raise "Can't process #{@date_string}" unless @start && @end
+    raise ParseError, "Can't process #{@date_string}" unless @start && @end
     @start..@end
   end 
     
